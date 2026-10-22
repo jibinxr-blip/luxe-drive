@@ -10,6 +10,8 @@
     const FRAME_COUNT = 266;
     const PRELOAD = 8;
     const DPR_CAP = 2;
+    const SUPABASE_URL = 'https://zqotsiidoefetiefvsnz.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_YL5JmR5wDH7k3_mipxMS_w_INLZy_FG';
 
     class Car {
         constructor({ id, brand, model, year, category, pricePerDay,
@@ -215,6 +217,37 @@
                 total: booking.total,
                 createdAt: booking.createdAt.toISOString()
             };
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/bookings`, {
+                method: 'POST',
+                headers: {
+                    apikey: SUPABASE_PUBLISHABLE_KEY,
+                    Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+                    'Content-Type': 'application/json',
+                    Prefer: 'return=minimal'
+                },
+                body: JSON.stringify({
+                    id: record.id,
+                    customer_name: record.customer.name,
+                    customer_email: record.customer.email,
+                    customer_phone: record.customer.phone,
+                    customer_licence: record.customer.licence,
+                    car_id: record.car.id,
+                    car_name: record.car.fullName || `${record.car.brand} ${record.car.model}`,
+                    pickup: record.pickup,
+                    return_date: record.ret,
+                    pickup_point: record.point,
+                    extras: record.extras,
+                    days: record.days,
+                    base_cost: record.baseCost,
+                    extras_cost: record.extrasCost,
+                    total: record.total,
+                    status: record.status,
+                    created_at: record.createdAt
+                })
+            });
+            if (!response.ok) {
+                throw new Error(`Supabase save failed: ${response.status}`);
+            }
             return new Promise((resolve, reject) => {
                 const transaction = db.transaction(this.storeName, 'readwrite');
                 transaction.objectStore(this.storeName).add(record);
