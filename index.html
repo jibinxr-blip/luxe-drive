@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LUXE DRIVE | Premium Car Rental</title>
+<meta name="description" content="Premium car rental service in India. Rent luxury, sports, SUV, EV and sedan cars with instant booking." />
+<meta name="theme-color" content="#050505" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <div class="loader__logo">LUXE<span>DRIVE</span></div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <p class="loader__text" id="loaderText">Loading frames…</p>
+  </div>
+</div>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <div class="nav">
+    <a href="#home" class="logo">LUXE<span>DRIVE</span></a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#home" class="nav__link is-active">Home</a>
+      <a href="#fleet" class="nav__link">Fleet</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#booking" class="nav__link">Booking</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="#booking" class="btn btn--red btn--sm">Reserve</a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Hero — Scroll Frame Animation -->
+<section class="hero" id="home">
+  <div class="hero__scroll" id="heroScroll">
+    <div class="hero__sticky">
+
+      <canvas id="heroCanvas" class="hero__canvas"></canvas>
+      <div class="hero__grain" aria-hidden="true"></div>
+      <div class="hero__vignette" aria-hidden="true"></div>
+      <div class="hero__scanline" aria-hidden="true"></div>
+
+      <div class="hero__content" id="heroContent">
+        <p class="hero__eyebrow"><span class="dot"></span> Premium Car Rental</p>
+        <h1 class="hero__title">
+          <span class="hero__line">WELCOME TO</span>
+          <span class="hero__line hero__line--red">LUXE DRIVE</span>
+        </h1>
+        <div class="hero__cta">
+          <a href="#booking" class="btn btn--red btn--lg">Book Now</a>
+          <a href="#fleet" class="btn btn--ghost btn--lg">View Fleet</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="head__kicker">About Us</p>
+      <h2 class="head__title">Premium Rental <span class="red">Experience</span></h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card__ico">🏎️</div>
+        <h3>Expertly Curated</h3>
+        <p>A hand-selected collection of premium vehicles for every journey.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ico">🔐</div>
+        <h3>Secure Booking</h3>
+        <p>Transparent pricing in Indian Rupees and instant confirmation for every reservation.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ico">🛡️</div>
+        <h3>Fully Insured</h3>
+        <p>Comprehensive cover and roadside assistance included with every rental.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ico">⚡</div>
+        <h3>Round the Clock</h3>
+        <p>Dedicated support available whenever you need it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Fleet -->
+<section class="section section--alt" id="fleet">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="head__kicker">The Fleet</p>
+      <h2 class="head__title">Available <span class="red">Vehicles</span></h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="filters reveal" id="filters"></div>
+    <div class="fleet" id="fleetGrid"></div>
+    <p class="fleet__empty" id="fleetEmpty" hidden>No vehicles available in this category right now.</p>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="head__kicker">Simple Process</p>
+      <h2 class="head__title">Three Steps to <span class="red">Drive Away</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="step__n">01</span><h3>Choose</h3><p>Browse the fleet and select your preferred vehicle.</p></div>
+      <div class="step reveal"><span class="step__n">02</span><h3>Reserve</h3><p>Complete the booking form and confirm your dates.</p></div>
+      <div class="step reveal"><span class="step__n">03</span><h3>Collect</h3><p>Pick up your keys from any of our locations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking -->
+<section class="section section--alt" id="booking">
+  <div class="wrap booking">
+    <div class="booking__left reveal">
+      <p class="head__kicker">Reservation</p>
+      <h2 class="head__title">Book Your <span class="red">Vehicle</span></h2>
+      <div class="rule rule--left"></div>
+      <p class="booking__copy">Select your dates, choose extras, and receive an instant confirmation. All rates are in Indian Rupees.</p>
+
+      <ul class="perks">
+        <li>No hidden fees</li>
+        <li>Free cancellation up to 24 hours</li>
+        <li>Fuel policy: same to same</li>
+        <li>GST invoice included</li>
+      </ul>
+    </div>
+
+    <div class="booking__right reveal">
+      <form class="form" id="rentalForm" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="f-name">Full Name</label>
+            <input id="f-name" name="name" type="text" placeholder="Aarav Sharma" autocomplete="name" required />
+            <small class="err" data-for="name"></small>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required />
+            <small class="err" data-for="phone"></small>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <small class="err" data-for="email"></small>
+          </div>
+          <div class="field">
+            <label for="f-licence">Licence Number</label>
+            <input id="f-licence" name="licence" type="text" placeholder="KL-07-2024-0000" required />
+            <small class="err" data-for="licence"></small>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="f-car">Vehicle</label>
+            <select id="f-car" name="carId" required></select>
+            <small class="err" data-for="carId"></small>
+          </div>
+          <div class="field">
+            <label for="f-pickup">Pick-up Date</label>
+            <input id="f-pickup" name="pickup" type="date" required />
+            <small class="err" data-for="pickup"></small>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="f-return">Return Date</label>
+            <input id="f-return" name="return" type="date" required />
+            <small class="err" data-for="return"></small>
+          </div>
+          <div class="field">
+            <label for="f-pickup-point">Pick-up Location</label>
+            <select id="f-pickup-point" name="point">
+              <option>Kochi — Marine Drive</option>
+              <option>Kochi — CGH Airport</option>
+              <option>Bengaluru — Indiranagar</option>
+              <option>Mumbai — Bandra Kurla</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="extras">
+          <legend>Extras</legend>
+          <label class="check"><input type="checkbox" name="extras" value="GPS" data-price="650" /><span>GPS Navigation — ₹650/day</span></label>
+          <label class="check"><input type="checkbox" name="extras" value="Additional Driver" data-price="950" /><span>Additional Driver — ₹950/day</span></label>
+          <label class="check"><input type="checkbox" name="extras" value="Child Seat" data-price="500" /><span>Child Seat — ₹500/day</span></label>
+          <label class="check"><input type="checkbox" name="extras" value="Full Protection" data-price="2000" /><span>Full Protection — ₹2,000/day</span></label>
+        </fieldset>
+
+        <div class="total">
+          <div class="total__row"><span id="totalDays">1 day</span><span id="totalBase">₹0</span></div>
+          <div class="total__row total__row--muted"><span>Extras</span><span id="totalExtras">₹0</span></div>
+          <div class="total__row total__row--grand"><span>Total Payable</span><span id="totalGrand">₹0</span></div>
+        </div>
+
+        <button class="btn btn--red btn--block" type="submit" id="submitBtn">Confirm Reservation</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <div class="logo">LUXE<span>DRIVE</span></div>
+      <p class="footer__txt">Premium car rental service. Quality vehicles for every occasion.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#booking">Booking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer__contact">
+        <li>Motorway Tower, Level 7, Kochi, Kerala</li>
+        <li>drive@luxedrive.rent</li>
+        <li>+91 484 555 0130</li>
+        <li>Open 24 × 7 × 365</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bar">
+    <p>© <span id="year"></span> LUXE DRIVE Car Rental · All prices in Indian Rupees (₹)</p>
+  </div>
+</footer>
+
+<section class="summary" id="summary" hidden>
+  <div class="wrap">
+    <h4>Confirmed Reservations</h4>
+    <div id="summaryList"></div>
+  </div>
+</section>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
